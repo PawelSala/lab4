@@ -2,8 +2,9 @@
 
 echo "*log*" > .gitignore
 
-create_logs() {  
-    for ((i=1; i<=100; i++)); do
+create_logs() {
+    local count=${1:-100}
+    for ((i=1; i<=$count; i++)); do
         echo "Log file $i" > "log$i.txt"
         echo "Created by: $0" >> "log$i.txt"
         echo "Creation date: $(date)" >> "log$i.txt"

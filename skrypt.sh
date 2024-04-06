@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "*log*" > .gitignore
+
 case $1 in
     --date|-d)
         echo "Today's date: $(date)"

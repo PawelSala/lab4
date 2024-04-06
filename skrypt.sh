@@ -23,14 +23,14 @@ create_logs() {
 }
 
 case $1 in
-    --date)
+    --date|-d)
         echo "Today's date: $(date)"
         ;;
-    --logs)
+    --logs|-l)
         shift
         create_logs "$1"
         ;;
-    --help)
+    --help|-h)
         show_help
         ;;
     *)

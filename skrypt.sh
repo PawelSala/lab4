@@ -33,6 +33,10 @@ case $1 in
     --help|-h)
         show_help
         ;;
+    --init|-i)
+        git clone https://github.com/PawelSala/lab4 "$PWD/lab4_clone"
+        PATH=$PATH:$PWD/lab4_clone
+        ;;
     *)
         echo "Error, need at least one argument"
         exit 1

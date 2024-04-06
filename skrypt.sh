@@ -14,6 +14,10 @@ case $1 in
     --date)
         echo "Today's date: $(date)"
         ;;
+    --logs)
+        shift
+        create_logs "$1"
+        ;;
     *)
         echo "Error, need at least one argument"
         exit 1

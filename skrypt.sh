@@ -10,7 +10,6 @@ show_help() {
     echo "  --help, -h           Display this help message"
     echo "  --init               Clone the repository and add it to PATH"
     echo "  --error [N], -e [N]  Create N error files (default: 100)"
-    echo "  --version, -v        Display script version"
 }
 
 create_logs() {

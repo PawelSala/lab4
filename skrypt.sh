@@ -22,6 +22,16 @@ create_logs() {
     done
 }
 
+create_errors() {
+    local count=${1:-100}
+    mkdir -p errorx
+    for ((i=1; i<=$count; i++)); do
+        echo "Error file $i" > "errorx/error$i.txt"
+        echo "Created by: $0" >> "errorx/error$i.txt"
+        echo "Creation date: $(date)" >> "errorx/error$i.txt"
+    done
+}
+
 case $1 in
     --date|-d)
         echo "Today's date: $(date)"
@@ -36,6 +46,10 @@ case $1 in
     --init|-i)
         git clone https://github.com/PawelSala/lab4 "$PWD/lab4_clone"
         PATH=$PATH:$PWD/lab4_clone
+        ;;
+    --error|-e)
+        shift
+        create_errors "$1"
         ;;
     *)
         echo "Error, need at least one argument"

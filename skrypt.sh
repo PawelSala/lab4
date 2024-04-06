@@ -2,8 +2,16 @@
 
 echo "*log*" > .gitignore
 
+create_logs() {  
+    for ((i=1; i<=100; i++)); do
+        echo "Log file $i" > "log$i.txt"
+        echo "Created by: $0" >> "log$i.txt"
+        echo "Creation date: $(date)" >> "log$i.txt"
+    done
+}
+
 case $1 in
-    --date|-d)
+    --date)
         echo "Today's date: $(date)"
         ;;
     *)

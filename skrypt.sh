@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "*log*" > .gitignore
-
 show_help() {
     echo "Usage: skrypt.sh [OPTION]"
     echo "Options:"
